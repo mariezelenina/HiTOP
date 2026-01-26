@@ -1,0 +1,5 @@
+# log files
+my_log*
+
+# notebook checkpoints
+.ipynb_checkpoints/
