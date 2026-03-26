@@ -1,6 +1,6 @@
-# THIS IS WORK IN PROGRESS*
 
-# HiTOP_validation_submisison
+# HiTOP_validation_submission
+
 This is a repo for code accompanying the manuscript "Test-Retest reliability and measurement invariance of a subset of the HiTOP internalizing scales with a two-week time window"
 
 # Authors
@@ -11,9 +11,8 @@ Francisco Pereira
 
 [Dylan M. Nielson](https://github.com/Shotgunosine)
 
-# Important links
+# Preregistration
 
-## Preregistration
 - https://osf.io/xpa7v/
 
 # Abstract
@@ -21,50 +20,45 @@ Francisco Pereira
 This is the repostory for the code used for the manuscript "Test-Retest reliability and measurement invariance of a subset of the HiTOP internalizing scales with a two-week time window". 
 [TODO]
 
+The Hierarchical Taxonomy of Psychopathology (HiTOP) is a novel way of measuring psychopathology, which addresses problems of existing measures.
+The validated HiTOP scales have a 1-year assessment window. This poses a challenge for relating them to individual performance on cognitive tasks collected in a single day, 
+as is common in research. We created a version of the scales more relevant for computational psychiatry by assessing symptoms over 2 weeks, using a subset of scales that were most relevant for depression and anxiety.
+We confirmed that the scales measure the same underlying constructs as the original, 1-year scales, with confirmatory factor analysis (CFA); analyzed their test-retest reliability with intracalss correlations (ICC), 
+and tested their convergent and divergent validity against existing robust scales.
+
 # How to run the code
 
 All preprocessing and analyses were conducted in Python, using Jupyter Notebooks.
 
-This directory has eight .ipynb files. Seven files with names starting with "notebook_analysis" are used for data analysis; one file with name starting with "notebook_graph" is used for plotting the data.
+All code should be run in this order, cell by cell, changing paths as appropriate:
 
-Notebooks should be ran cell by cell, paying attention to comments which cells to run for which dataset (general population or enriched population or combined) and which visit (initial or recontact).
++ **NB_1_preprocess_and_descriptive.ipynb** preprocesses raw data and collects descriptive statistics.
++ **NB_2_cfa.ipynb** runs confirmatory factor analysis.
++ **NB_3_ICC.ipynb** runs test-retest reliability analysis.
++ **NB_4_convdiv.ipynb** tests convergent and divergent hypotheses.
++ ***NB_icc_plots.ipynb*** is used to produce Fig. 3 (ICC results).
 
-- The notebook ***notebook_analysis_1_preprocessing_CLEAN.ipynb*** preprocesses raw datasets and saves the data in the format for future analysis.
-
-- The notebook ***notebook_analysis_2_descriptive_both.ipynb*** outputs descriptive statistics (sex and age distribution) and can be used to plot visiual representations of these statistics.
-
-- The notebook ***notebook_analysis_3_ICC_both.ipynb*** performs itracorrelation analyses (ICC).
-
-  - The notebook ***notebook_graph_hitop_iccs.ipynb*** plots figure [TODO figure number from manuscript]: ICC for both datasets.
-
-- The notebook ***notebook_analysis_4_cronbachs.ipynb*** calculates Cronbach's alpha.
-
-- The notebook ***notebook_analysis_5_cfa_functions.ipynb*** assesses measurement invariance by performing confirmatory factor analyses (CFA) for HiTOP scales.
-
-- The notebook ***notebook_analysis_6_cfa_baars_gad_phq.ipynb*** assesses measurement invariance by performing confirmatory factor analyses (CFA) for BAARS, GAD and PHQ scales.
-
-- The notebook ***notebook_analysis_7_conv_div.ipynb*** performs convergent and divergent validity hypotheses.
+If you come across an issue, please submit it in this repository or reach out to [Marie Zelenina](https://github.com/mariezelenina) or [Dylan Nielson](https://github.com/Shotgunosine) with questions.
 
 # Where/how to get the data
 
-TODO
-
-# How to run the code
-
-To run the analysis, open the desired .ipynb file.
-Each main analysis file contains functions for loading files, preprocessing and analysis. 
-Notebooks are to be run block by block.
-Please submit an issue in this repository or reach out to [Marie Zelenina](https://github.com/mariezelenina) or [Dylan Nielson](https://github.com/Shotgunosine) with questions.
+TODO after data sharing.
 
 ## How to install dependencies
 
 We use the following python libraries: 
 
-jupyter notebook pandas numpy matplotlib scikit-learn scipy itertools seaborn rpy2 pingouin statsmodels random
+*jupyter notebook, pandas, numpy, matplotlib, sklearn (scikit-learn), scipy, itertools, openpyxl, contextlib, random, math, seaborn, datetime, csv, pingouin, statsmodels, pathlib, rpy2*
 
 and the following R packages (for CFA analysis):
 
-utils lavaan semtools stringr reticulate
+*lavaan, semTools, stringr, reticulate (+ base and utils)*
+
+The CFA code uses a mix of python and R libraries, so it might get tricky. For integration between pythion and R, we used the version of rpy2=3.5.1, r-base=4.2.3. 
 
 You can create a conda environment with:
-`conda env create -p ./env -f environment.yml`
+
+`conda env create -p ./env -f environment_hitop.yml`
+
+Loading R packages from the environment might cause errors. In that case, we recommend loading python packages from the provided environment and then installing R packages separately into the loaded environment.
+

@@ -1,0 +1,19 @@
+name: env_semtools_fix
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - seaborn
+  - python=3.11
+  - statsmodels
+  - scipy
+  - jupyter
+  - pandas
+  - scikit-learn
+  - numpy
+  - matplotlib
+  - openpyxl
+  - pingouin
+  - rpy2=3.5.1
+  - r-lavaan
+prefix: /Users/zeleninam2/miniconda3/envs/env_semtools_fix
