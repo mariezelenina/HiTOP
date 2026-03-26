@@ -18,7 +18,6 @@ Francisco Pereira
 # Abstract
 
 This is the repostory for the code used for the manuscript "Test-Retest reliability and measurement invariance of a subset of the HiTOP internalizing scales with a two-week time window". 
-[TODO]
 
 The Hierarchical Taxonomy of Psychopathology (HiTOP) is a novel way of measuring psychopathology, which addresses problems of existing measures.
 The validated HiTOP scales have a 1-year assessment window. This poses a challenge for relating them to individual performance on cognitive tasks collected in a single day, 
