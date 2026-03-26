@@ -4,3 +4,6 @@ logs/
 
 # notebook checkpoints
 .ipynb_checkpoints/
+
+# old files
+archive/
